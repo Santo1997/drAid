@@ -1,0 +1,73 @@
+.header {
+  @include fixed_area(7rem,100%, grid, auto auto);
+  align-items: center;
+  justify-content: space-between;
+  padding: $defultPM $midPM;
+  border-bottom: $border;
+  color: var(--white);
+  background: var(--gray-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  .head {
+    @include fixed_area(auto, 18rem, grid, auto auto);
+    align-items: center;
+    grid-gap: $defultPM;
+    position: absolute;
+    top: 50%;
+    right: $midPM;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    h2 span i {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.userImg {
+  @include fixed_area(3.5rem, 3.5rem);
+  border-radius: 100%;
+}
+
+#nav {
+  display: none;
+
+  &:checked ~ #navBar {
+    display: block;
+  }
+}
+
+.headOut {
+  @include fixed_area(auto, 14rem,none);
+  list-style: none;
+  padding: $defultPM;
+  background: var(--gray-dark);
+  box-shadow: 0 0 35px -3px var(--black);
+  position: absolute;
+  top: 85%;
+  right: $midPM;
+
+  li {
+    &:not(:last-child) {
+      border-bottom: $border;
+    }
+
+    a {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      color: var(--white);
+      padding: $defultPM;
+      text-align: center;
+
+      span:first-child {
+        padding: 1rem 0.2rem;
+        border-radius: 100%;
+        background: var(--black);
+      }
+    }
+  }
+}

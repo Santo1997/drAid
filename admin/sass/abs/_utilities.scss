@@ -1,0 +1,98 @@
+.grn {
+  color: var(--green) !important;
+}
+
+.red {
+  color: var(--red) !important;
+}
+
+.vlt {
+  color: var(--indigo) !important;
+}
+
+.orng {
+  color: var(--orange) !important;
+}
+
+.tytle {
+  padding: $defultPM;
+  color: var(--primary);
+  text-align: left;
+  text-decoration: underline;
+}
+
+.success {
+  @include linktype(var(--success),rgba(#00d25b, 0.3));
+
+  &:hover {
+    @include linktype(var(--white),var(--green));
+  }
+}
+
+.edit {
+  @include linktype(var(--warning),rgba(#ffab00, 0.3));
+
+  &:hover {
+    @include linktype(var(--white),var(--warning));
+  }
+}
+
+.del {
+  @include linktype(var(--danger),rgba(#fc424a, 0.3));
+
+  &:hover {
+    @include linktype(var(--white),var(--danger));
+  }
+}
+
+.marginFix {
+  margin-top: - $midPM !important;
+  margin-left: - $defultPM !important;
+}
+
+.titPos {
+  margin-bottom: $midPM !important;
+}
+
+#contactInfo {
+  margin-bottom: $midPM !important;
+}
+
+#up {
+  display: none;
+
+  &:checked ~ #upper {
+    display: block;
+  }
+}
+
+.fixed {
+  height: calc(100vh - 8rem) !important;
+  overflow: hidden;
+  padding-top: 0 !important;
+}
+.fixedPadding {
+  padding: 0 !important;
+}
+.fixedPadding,
+.fixedHeight {
+  .tdsActivity,
+  .tdsDetails {
+    height: auto !important;
+  }
+}
+
+.indexSection {
+  height: calc(100vh - 4rem) !important;
+  background: var(--dark) !important;
+}
+
+.signBg {
+  display: block !important;
+}
+
+.fixedFoot {
+  position: absolute !important;
+  right: $defultPM;
+  bottom: 0;
+}

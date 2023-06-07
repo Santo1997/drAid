@@ -1,0 +1,75 @@
+.memberSlide {
+  margin: $midPM auto;
+
+  label {
+    margin-left: - $midPM;
+  }
+
+  .detaContain {
+    @include fixed_area(27rem,100%);
+    @include scroll;
+    overflow: auto;
+    background: var(--black);
+    margin: $defultPM 0;
+  }
+
+  .shwMember {
+    list-style: none;
+
+    li {
+      padding: $defultPM 1rem;
+
+      &:not(:last-child) {
+        border: $border;
+      }
+
+      a {
+        color: var(--dark-blue);
+      }
+    }
+  }
+}
+
+.userPic {
+  @include fixed_area(45%,60%);
+  margin: $midPM auto;
+}
+
+.tdsActivity {
+  .userInfo {
+    color: var(--dark-blue);
+
+    h1 {
+      border: 0;
+      color: var(--primary);
+      margin: $midPM 0;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin: $defultPM;
+      }
+    }
+  }
+}
+
+.infoLab {
+  font-size: $midFont;
+  color: var(--info);
+  padding-left: $midPM;
+}
+
+.basicInfo,
+.contactInfo {
+  @include fixed_area(auto,90%,grid, 35% 65%);
+  justify-content: flex-start;
+  margin: 0 $lgPM;
+  color: var(--dark-blue);
+  list-style: none;
+
+  li {
+    padding: $defultPM;
+  }
+}

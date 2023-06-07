@@ -1,0 +1,85 @@
+.bgm {
+  @include fixed_area(100vh,100%);
+
+  img {
+    @include fixed_area(100%,100%);
+  }
+}
+
+.intro_contain {
+  @include fixed_area(55%,60%,none);
+  background: rgba(black, 0.8);
+  padding: $lgPM;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  h2 {
+    color: var(--white);
+    font-size: $lgFont;
+  }
+
+  h1 {
+    color: var(--primary);
+    margin: $defultPM $midPM;
+    font-size: 5rem;
+  }
+
+  p {
+    color: var(--white);
+    text-indent: $midPM;
+    margin: $defultPM 0;
+    text-align: justify;
+  }
+
+  form {
+    margin: $midPM 0;
+
+    label {
+      display: inline-block;
+      color: var(--primary);
+      font-size: $midFont;
+    }
+
+    select {
+      width: 45%;
+      margin-left: $defultPM;
+      padding: $defultPM;
+      outline: 0;
+      color: var(--white);
+      background: rgba(#0090e7, 0.8);
+      text-transform: capitalize;
+      border: 2px solid var(--primary);
+
+      &:focus {
+        outline: 0;
+        scroll-behavior: smooth;
+      }
+
+      option {
+        padding: $defultPM $midPM;
+        margin: $defultPM;
+        background: rgba(black, 0.8);
+      }
+    }
+
+    input {
+      margin-top: $midPM;
+      display: block;
+      font-size: $midFont;
+      padding: $defultPM $midPM;
+      border: 0;
+      cursor: pointer;
+      position: absolute;
+      right: $lgPM + 5;
+
+      &:focus,
+      &:not(:focus):valid {
+        outline: none;
+        border: 0;
+      }
+    }
+  }
+}

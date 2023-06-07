@@ -1,0 +1,53 @@
+.header {
+  @include fixed_area(6rem,100%, grid, auto auto);
+  padding: 0 $midPM;
+  border-bottom: $border;
+  background: var(--primary);
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  .hedlogo {
+    a {
+      @include fixed_area(100%,auto, grid, auto auto);
+      color: var(--white);
+      align-items: center;
+      justify-content: flex-start;
+      grid-column-gap: 5%;
+
+      .logoImg {
+        @include fixed_area(4.5rem, 4.5rem);
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .nav {
+    ul {
+      @include fixed_area(auto, 100%, grid, auto auto auto);
+      list-style: none;
+
+      li {
+        padding: $defultPM;
+
+        a {
+          display: grid;
+          grid-template-columns: auto auto;
+          align-items: center;
+          color: var(--white);
+          padding: $defultPM 0;
+          text-align: center;
+          font-weight: bold;
+
+          &:hover {
+            color: var(--dark);
+            border-bottom: 1px solid var(--dark);
+          }
+        }
+      }
+    }
+  }
+}

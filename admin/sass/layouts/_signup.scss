@@ -1,0 +1,59 @@
+.signup {
+  @include fixed_area(auto,45%);
+  margin: $defultPM;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 0;
+  transform: translate(-50%,-50%);
+
+  .label {
+    @include fixed_area(auto,100%,block);
+    padding: 0 $midPM;
+    text-align: left;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .signin {
+    padding: $midPM $lgPM;
+  }
+
+  .name {
+    @include fixed_area(auto,100%,grid,auto auto);
+    grid-column-gap: 1%;
+    align-items: center;
+    justify-content: center;
+
+    .field {
+      width: 100%;
+    }
+  }
+
+  .field {
+    width: 90%;
+  }
+
+  .gender-info {
+    @include fixed_area(auto,80%,grid,auto auto auto);
+    margin: $midPM;
+    font-size: $defult;
+  }
+
+  .fgtDecline {
+    width: 50%;
+  }
+
+  h4 {
+    width: 100%;
+    margin-top: $midPM;
+
+    a {
+      color: var(--primary);
+
+      &:hover {
+        color: var(--white);
+        text-decoration: underline;
+      }
+    }
+  }
+}

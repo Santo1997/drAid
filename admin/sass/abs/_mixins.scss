@@ -1,0 +1,97 @@
+@mixin fixed_area($h, $w, $display:false, $grid:false) {
+  height: $h;
+  width: $w;
+  @if $display {
+    display: $display;
+    grid-template-columns: $grid;
+  } @else {
+    display: block;
+  }
+}
+@mixin scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 0;
+  }
+}
+@mixin linktype($cl, $bgm) {
+  color: $cl;
+  background: $bgm;
+  font-weight: bold;
+  border-radius: 0.4rem;
+}
+/*
+@mixin link {
+  padding: $defultPM;
+  color: $primaryFont;
+  font-weight: bold;
+  font-size: $defult;
+}
+@mixin close {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  color: $red;
+  font-size: $smFont;
+}
+@mixin scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 0;
+  }
+}
+/*
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:       phone
+600 - 900px:   Tablet Portrait
+900 - 1200px:   Tablet Landscape
+[1200 -1800px] is where our normal styles apply
+1800px + :   Big Desktop
+*/
+// @mixin respond-phone {
+//     @media (max-width: 600px) {
+//         @content;
+//     }
+// }
+/*
+$breakpoint argument choices
+- Phone
+- Tab-port
+- Tab-land
+- Big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+EM IS THE BEST OPTION FOR THE MEDIA QUERY
+*/

@@ -1,0 +1,49 @@
+.grn {
+  color: var(--green) !important;
+}
+
+.red {
+  color: var(--red) !important;
+}
+
+.vlt {
+  color: var(--indigo) !important;
+}
+
+.orng {
+  color: var(--orange) !important;
+}
+
+.success {
+  @include linktype(var(--success),rgba(#00d25b, 0.3));
+
+  &:hover {
+    @include linktype(var(--white),var(--green));
+  }
+}
+
+.edit {
+  @include linktype(var(--warning),rgba(#ffab00, 0.3));
+
+  &:hover {
+    @include linktype(var(--white),var(--warning));
+  }
+}
+
+.del {
+  @include linktype(var(--danger),rgba(#fc424a, 0.3));
+
+  &:hover {
+    @include linktype(var(--white),var(--danger));
+  }
+}
+
+.introbgm {
+  @include fixed_area(100vh,100%);
+  background: var(--white);
+
+  img {
+    @include fixed_area(65vh,75vw);
+    margin: 0 auto;
+  }
+}

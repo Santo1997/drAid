@@ -1,0 +1,17 @@
+.footer {
+  @include fixed_area(auto,100%);
+  margin-top: $defultPM;
+  padding: $defultPM;
+  text-align: right;
+  font-size: $smFont;
+  color: var(--dark-blue);
+  background: var(--gray-dark);
+
+  a {
+    color: var(--info);
+  }
+
+  &:hover a {
+    text-decoration: underline;
+  }
+}

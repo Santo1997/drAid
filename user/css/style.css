@@ -1,0 +1,646 @@
+:root {
+  --blue: #5E50F9;
+  --indigo: #6610f2;
+  --purple: #6a008a;
+  --pink: #E91E63;
+  --red: #f96868;
+  --orange: #f2a654;
+  --yellow: #f6e84e;
+  --green: #46c35f;
+  --teal: #58d8a3;
+  --cyan: #57c7d4;
+  --white: #ffffff;
+  --gray: #6c757d;
+  --gray-dark: #191c24;
+  --gray-light: #aab2bd;
+  --gray-lighter: #e8eff4;
+  --gray-lightest: #e6e9ed;
+  --black: #000000;
+  --primary: #0090e7;
+  --secondary: #e4eaec;
+  --success: #00d25b;
+  --info: #8f5fe8;
+  --warning: #ffab00;
+  --danger: #fc424a;
+  --light: #ffffff;
+  --dark: #0d0d0d;
+  --darGraBlue: #2c2e33;
+  --dark-blue: #6c7293; }
+
+/*
+@mixin link {
+  padding: $defultPM;
+  color: $primaryFont;
+  font-weight: bold;
+  font-size: $defult;
+}
+@mixin close {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  color: $red;
+  font-size: $smFont;
+}
+@mixin scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 0;
+  }
+}
+/*
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:       phone
+600 - 900px:   Tablet Portrait
+900 - 1200px:   Tablet Landscape
+[1200 -1800px] is where our normal styles apply
+1800px + :   Big Desktop
+*/
+/*
+$breakpoint argument choices
+- Phone
+- Tab-port
+- Tab-land
+- Big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+EM IS THE BEST OPTION FOR THE MEDIA QUERY
+*/
+.grn {
+  color: var(--green) !important; }
+
+.red {
+  color: var(--red) !important; }
+
+.vlt {
+  color: var(--indigo) !important; }
+
+.orng {
+  color: var(--orange) !important; }
+
+.success {
+  color: var(--success);
+  background: rgba(0, 210, 91, 0.3);
+  font-weight: bold;
+  border-radius: 0.4rem; }
+  .success:hover {
+    color: var(--white);
+    background: var(--green);
+    font-weight: bold;
+    border-radius: 0.4rem; }
+
+.edit {
+  color: var(--warning);
+  background: rgba(255, 171, 0, 0.3);
+  font-weight: bold;
+  border-radius: 0.4rem; }
+  .edit:hover {
+    color: var(--white);
+    background: var(--warning);
+    font-weight: bold;
+    border-radius: 0.4rem; }
+
+.del {
+  color: var(--danger);
+  background: rgba(252, 66, 74, 0.3);
+  font-weight: bold;
+  border-radius: 0.4rem; }
+  .del:hover {
+    color: var(--white);
+    background: var(--danger);
+    font-weight: bold;
+    border-radius: 0.4rem; }
+
+.introbgm {
+  height: 100vh;
+  width: 100%;
+  display: block;
+  background: var(--white); }
+  .introbgm img {
+    height: 65vh;
+    width: 75vw;
+    display: block;
+    margin: 0 auto; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'Ubuntu', sans-serif; }
+
+html {
+  font-size: 62.5%;
+  /*
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px, 12/16 = 75%
+    }*/ }
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  box-sizing: border-box;
+  background: var(--white);
+  position: relative;
+  font-size: 1.6rem;
+  overflow: hidden;
+  /*  @include respond(tab-port) {
+    padding: 0;
+  }*/ }
+
+.section {
+  height: auto;
+  width: 100%;
+  display: block;
+  position: relative;
+  background: green; }
+
+a {
+  text-decoration: none; }
+
+.header {
+  height: 6rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--darGraBlue);
+  background: var(--primary);
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50; }
+  .header .hedlogo a {
+    height: 100%;
+    width: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    color: var(--white);
+    align-items: center;
+    justify-content: flex-start;
+    grid-column-gap: 5%; }
+    .header .hedlogo a .logoImg {
+      height: 4.5rem;
+      width: 4.5rem;
+      display: block;
+      border-radius: 100%; }
+  .header .nav ul {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    list-style: none; }
+    .header .nav ul li {
+      padding: 0.8rem; }
+      .header .nav ul li a {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        color: var(--white);
+        padding: 0.8rem 0;
+        text-align: center;
+        font-weight: bold; }
+        .header .nav ul li a:hover {
+          color: var(--dark);
+          border-bottom: 1px solid var(--dark); }
+
+.bgm {
+  height: 100vh;
+  width: 100%;
+  display: block; }
+  .bgm img {
+    height: 100%;
+    width: 100%;
+    display: block; }
+
+.intro_contain {
+  height: 55%;
+  width: 60%;
+  display: none;
+  grid-template-columns: false;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5rem;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .intro_contain h2 {
+    color: var(--white);
+    font-size: 3rem; }
+  .intro_contain h1 {
+    color: var(--primary);
+    margin: 0.8rem 2rem;
+    font-size: 5rem; }
+  .intro_contain p {
+    color: var(--white);
+    text-indent: 2rem;
+    margin: 0.8rem 0;
+    text-align: justify; }
+  .intro_contain form {
+    margin: 2rem 0; }
+    .intro_contain form label {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 2rem; }
+    .intro_contain form select {
+      width: 45%;
+      margin-left: 0.8rem;
+      padding: 0.8rem;
+      outline: 0;
+      color: var(--white);
+      background: rgba(0, 144, 231, 0.8);
+      text-transform: capitalize;
+      border: 2px solid var(--primary); }
+      .intro_contain form select:focus {
+        outline: 0;
+        scroll-behavior: smooth; }
+      .intro_contain form select option {
+        padding: 0.8rem 2rem;
+        margin: 0.8rem;
+        background: rgba(0, 0, 0, 0.8); }
+    .intro_contain form input {
+      margin-top: 2rem;
+      display: block;
+      font-size: 2rem;
+      padding: 0.8rem 2rem;
+      border: 0;
+      cursor: pointer;
+      position: absolute;
+      right: 10rem; }
+      .intro_contain form input:focus, .intro_contain form input:not(:focus):valid {
+        outline: none;
+        border: 0; }
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background: rgba(0, 0, 0, 0.9);
+  padding-top: 7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: auto; }
+  .container::-webkit-scrollbar {
+    background: transparent;
+    width: 0; }
+
+.content {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 0 2rem; }
+
+.meet_fix {
+  height: 100%;
+  width: 100%;
+  display: block; }
+  .meet_fix h1 {
+    color: var(--primary);
+    font-size: 4rem;
+    text-transform: capitalize; }
+  .meet_fix form {
+    height: 100%;
+    width: 75%;
+    display: block;
+    padding-left: 2rem;
+    margin-top: 5rem; }
+    .meet_fix form div {
+      height: auto;
+      width: 85%;
+      display: block;
+      margin: 2rem 0; }
+      .meet_fix form div .label {
+        margin-bottom: 0.8rem;
+        font-size: 2rem;
+        color: var(--info);
+        display: inline-block; }
+      .meet_fix form div .input,
+      .meet_fix form div textarea {
+        height: 3.5rem;
+        width: 85%;
+        display: block;
+        margin-left: 5rem;
+        margin-top: 0.8rem;
+        padding: 0.4rem 2rem;
+        font-size: 1.6rem;
+        background: rgba(108, 114, 147, 0.8);
+        color: var(--primary);
+        border: 0;
+        outline: 0; }
+        .meet_fix form div .input:focus,
+        .meet_fix form div textarea:focus {
+          color: var(--white);
+          border: 1px solid var(--green); }
+      .meet_fix form div textarea {
+        height: 10rem !important; }
+    .meet_fix form .fixGrid,
+    .meet_fix form .fixRadio {
+      display: grid;
+      align-items: center;
+      grid-template-columns: auto auto auto; }
+      .meet_fix form .fixGrid label,
+      .meet_fix form .fixRadio label {
+        color: var(--primary); }
+    .meet_fix form .fixGrid {
+      grid-template-columns: auto auto !important;
+      align-items: center;
+      justify-content: flex-start; }
+      .meet_fix form .fixGrid label {
+        color: var(--info); }
+      .meet_fix form .fixGrid select {
+        width: 25rem;
+        margin-left: 0.8rem;
+        padding: 0.8rem;
+        font-size: 1.6rem;
+        border: 1px solid rgba(108, 114, 147, 0.8);
+        outline: 0;
+        color: var(--primary);
+        background: rgba(108, 114, 147, 0.8); }
+        .meet_fix form .fixGrid select:focus {
+          color: var(--white);
+          border: 1px solid var(--green);
+          scroll-behavior: smooth; }
+        .meet_fix form .fixGrid select option {
+          padding: 0.8rem 2rem;
+          margin: 0.8rem;
+          background: rgba(108, 114, 147, 0.8); }
+    .meet_fix form .updtInfo {
+      text-align: right;
+      padding-right: 5rem; }
+      .meet_fix form .updtInfo input[type=reset],
+      .meet_fix form .updtInfo input[type=submit] {
+        border: 0;
+        outline: 0;
+        display: inline-block;
+        padding: 0.8rem 2rem; }
+      .meet_fix form .updtInfo .cancel {
+        color: var(--red);
+        background: rgba(249, 104, 104, 0.3);
+        font-weight: bold;
+        border-radius: 0.4rem; }
+        .meet_fix form .updtInfo .cancel:hover {
+          color: var(--white);
+          background: var(--red);
+          font-weight: bold;
+          border-radius: 0.4rem; }
+      .meet_fix form .updtInfo .submit {
+        color: var(--green);
+        background: rgba(70, 195, 95, 0.3);
+        font-weight: bold;
+        border-radius: 0.4rem; }
+        .meet_fix form .updtInfo .submit:hover {
+          color: var(--white);
+          background: var(--green);
+          font-weight: bold;
+          border-radius: 0.4rem; }
+
+.con_member {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background: var(--dark);
+  padding-right: 0.8rem;
+  padding-top: 2rem; }
+  .con_member h1 {
+    padding: 0 2rem;
+    font-size: 3rem;
+    color: var(--primary); }
+  .con_member h2 {
+    padding: 0.8rem;
+    font-size: 2rem;
+    color: var(--info); }
+  .con_member #shwActvty {
+    margin: 0.8rem;
+    list-style: none;
+    display: block; }
+    .con_member #shwActvty li {
+      height: 2.5rem;
+      width: auto;
+      display: block;
+      color: var(--info);
+      margin: 0.8rem;
+      padding-left: 2rem;
+      font-weight: bold;
+      position: relative; }
+      .con_member #shwActvty li::after, .con_member #shwActvty li::before {
+        border-right: 2px solid var(--info);
+        content: '';
+        display: block;
+        height: 8px;
+        margin-top: -6px;
+        position: absolute;
+        transform: rotate(135deg);
+        left: 0;
+        top: 38%;
+        width: 0; }
+      .con_member #shwActvty li::after {
+        margin-top: -1px;
+        transform: rotate(45deg); }
+
+.apptCheck {
+  display: block !important;
+  width: 80%;
+  margin: 0 auto; }
+
+.fgt_login {
+  height: auto;
+  width: 50%;
+  display: block;
+  padding-bottom: 2rem;
+  margin: 10% auto;
+  color: var(--dark-blue);
+  background: var(--gray-dark);
+  border: 2px solid var(--primary);
+  overflow: hidden; }
+  .fgt_login .label {
+    height: auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+    line-height: 2;
+    color: var(--primary);
+    font-size: 3rem;
+    cursor: pointer;
+    border-bottom: 2px solid var(--primary); }
+  .fgt_login .signin {
+    height: auto;
+    width: 100%;
+    display: block;
+    padding: 5rem;
+    position: relative; }
+    .fgt_login .signin p {
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 2rem; }
+    .fgt_login .signin .field {
+      height: 6.5rem;
+      width: 100%;
+      display: block;
+      position: relative;
+      margin: 0.8rem auto; }
+      .fgt_login .signin .field .lab {
+        opacity: 0.7;
+        color: var(--dark-blue);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 2;
+        pointer-events: none; }
+      .fgt_login .signin .field input {
+        height: 3.8rem;
+        width: 100%;
+        display: block;
+        padding: 0.8rem;
+        font-size: 1.6rem;
+        outline: none;
+        border: 0;
+        background: var(--dark); }
+        .fgt_login .signin .field input:focus, .fgt_login .signin .field input:not(:focus):valid {
+          outline: none;
+          color: var(--white);
+          border: 0.5px solid var(--primary); }
+      .fgt_login .signin .field input:focus + .lab,
+      .fgt_login .signin .field input:not(:focus):valid + .lab {
+        top: -22px;
+        left: 5px;
+        font-weight: bold;
+        font-size: 1.6rem; }
+    .fgt_login .signin input[type=submit] {
+      display: block;
+      margin: 0 auto;
+      font-size: 2rem;
+      padding: 0.8rem 2rem;
+      border: 0;
+      cursor: pointer; }
+    .fgt_login .signin .fgtDecline {
+      height: auto;
+      width: 100%;
+      display: block;
+      margin: 0.8rem auto; }
+
+.apptCheck .meet_fix .con_details {
+  height: auto;
+  width: 100%;
+  display: block;
+  position: relative;
+  border: 1px solid var(--teal);
+  padding: 2rem; }
+  .apptCheck .meet_fix .con_details h1 {
+    color: var(--primary);
+    margin-bottom: 0.4rem; }
+  .apptCheck .meet_fix .con_details .mainInfo {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    grid-column-gap: 1%;
+    align-items: center; }
+  .apptCheck .meet_fix .con_details .psnInfo {
+    text-align: right; }
+    .apptCheck .meet_fix .con_details .psnInfo h2 {
+      font-size: 2rem;
+      display: inline-block;
+      border-bottom: 0;
+      color: var(--primary); }
+  .apptCheck .meet_fix .con_details .infoChk h2 {
+    font-size: 2rem;
+    display: inline-block;
+    border-bottom: 0;
+    color: var(--info); }
+    .apptCheck .meet_fix .con_details .infoChk h2 span {
+      color: var(--primary);
+      text-decoration: underline; }
+  .apptCheck .meet_fix .con_details h3 {
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+    padding-left: 2rem; }
+  .apptCheck .meet_fix .con_details p {
+    text-indent: 2rem;
+    color: var(--dark-blue);
+    margin: 2rem; }
+  .apptCheck .meet_fix .con_details ul {
+    display: block;
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: right; }
+    .apptCheck .meet_fix .con_details ul li {
+      display: inline-block;
+      margin-right: 0.8rem; }
+      .apptCheck .meet_fix .con_details ul li a {
+        padding: 0.8rem; }
+
+/*
+
+<li>01</li>
+<li>Farhana Akhter</li>
+<li>To Meet</li>
+<li>Hossain Santo</li>
+<li>3:30PM Monday, Sep 5, 2022</li>
+<li><a href="">Set Ok</a></li>
+
+<li>02</li>
+<li>Farhana Akhter</li>
+<li>To Meet</li>
+<li>Hossain Santo</li>
+<li>3:30PM Monday, Sep 5, 2022</li>
+<li><a href="">Set Ok</a></li>
+</ul>
+*/
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

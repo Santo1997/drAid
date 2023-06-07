@@ -1,0 +1,113 @@
+<?php
+  session_start();
+  $tbl = $_SESSION['acct'];
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>DrAid</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="hedlogo">
+      <a href="#">
+        <img src="media/appointment.jpg" class="logoImg">
+        <h1>DrAid</h1>
+      </a>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="includes/reset.php">Home</a></li>
+        <li><a href="chckAppointment.php?req">Your Appointment</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div  class="bgm">
+      <img src="media/appointment.jpg" alt="">
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <div class="meet_fix">
+          <h1>Welcome to: <span id="tblname"></span></h1>
+          <form action="includes/home.inc.php" method="post">
+            <input type="hidden" name="setTbl" id="setTblName" value="<?php echo $tbl ; ?>">
+            <div class="fixGrid">
+              <label for="person" class="label fix_lab">Person whom meet :</label>
+              <select name="setuser" id="person" onchange="changePsn();" required class="type fix_lab">
+                <!-- IDEA: -->
+              </select>
+            </div>
+            <div>
+              <label for="clt" class="label">Person Name :</label>
+              <input type="text" name="username" id="clt" required class="input">
+            </div>
+            <div class="fixGrid">
+              <label for="time" class="label">Mobile Number :</label>
+              <input type="text" name="metnum" id="num" required class="input ">
+            </div>
+            <div>
+              <label for="mail" class="label">Person Email :</label>
+              <input type="email" name="memail" id="mail" value="" required class="input">
+            </div>
+            <div class="fixGrid">
+              <label for="time" class="label">Meeting Date & Time :</label>
+              <input type="datetime-local" name="metime" id="time" required class="input ">
+            </div>
+            <div class="fixRadio">
+              <p class="label">Meeting Type :</p>
+              <label><input type="radio" name="metype" value="normal"> Normal</label>
+              <label><input type="radio" name="metype" value="urgent">Emergency</label>
+            </div>
+            <div>
+              <label for="reason" class="label">Meeting Reason :</label>
+              <input type="text" name="metReason" id="reason" required value="" class="input">
+            </div>
+            <div class="cause">
+              <label for="cause" class="label">Reason Details :</label>
+              <textarea name="metCause" id="cause"></textarea>
+            </div>
+            <div class="updtInfo">
+              <input type="reset" name="reset" value="Reset" class="cancel">
+              <input type="submit" name="setSubmit" value="Submit" class="submit">
+            </div>
+          </form>
+        </div>
+        <div id="memberDtls" class="con_member">
+          <h2>Activitis Of</h2>
+          <h1 id="show_person">Select Person</h1><br />
+          <ul id="shwActvty">
+            <!-- IDEA: -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+  <script src="js/app.js" charset="utf-8"></script>
+  <script src="js/fun.js" charset="utf-8"></script>
+  <script defer src="https://friconix.com/cdn/friconix.js"> </script>
+</body>
+
+</html>

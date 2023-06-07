@@ -1,0 +1,251 @@
+.container {
+  @include fixed_area(auto, 100%);
+  padding: 0 $defultPM;
+}
+
+.containInfo {
+  @include fixed_area(auto, 100%);
+
+  ul {
+    @include fixed_area(auto, 100%, grid, 22% 22% 22% 22%);
+    list-style: none;
+    align-items: center;
+    grid-column-gap: 1%;
+
+    li {
+      @include fixed_area(8rem, 100%);
+      color: var(--white);
+      background: var(--gray-dark);
+      text-align: center;
+      padding: $defultPM $midPM;
+
+      p {
+        margin-top: $defultPM;
+        color: var(--dark-blue);
+      }
+    }
+  }
+}
+
+.offTime {
+  margin-top: $defultPM;
+
+  form {
+    font-size: $defult;
+    padding-bottom: $midPM;
+    color: var(--dark-blue);
+    position: relative;
+    background: var(--gray-dark);
+
+    div {
+      @include fixed_area(auto, 90%);
+      padding: $defultPM $midPM;
+
+      label {
+        margin-left: $defultPM;
+        color: var(--primary);
+      }
+
+      #dto,
+      #to {
+        margin-left: $midPM;
+      }
+
+      input {
+        @include fixed_area(3rem, 35%, inline-block);
+        padding: $defultPM;
+        font-size: $defult;
+        outline: none;
+        border: 0;
+        color: var(--dark-blue);
+        background: var(--white);
+
+        &:focus,
+        &:not(:focus):valid {
+          outline: none;
+          color: var(--dark-blue);
+          border: 0.5px solid var(--primary);
+        }
+      }
+    }
+
+    input[type=submit] {
+      @include fixed_area(auto,auto);
+      @include linktype(var(--warning),rgba(#ffab00, 0.3));
+      text-align: left;
+      margin: $defultPM auto;
+      padding: $defultPM $midPM;
+      position: absolute;
+      right: $midPM;
+      bottom: $defultPM;
+
+      &:focus,
+      &:not(:focus):valid {
+        outline: none;
+        border: 0;
+      }
+
+      &:hover {
+        @include linktype(var(--white),var(--warning));
+      }
+    }
+  }
+}
+
+.tdsHistory {
+  @include fixed_area(auto, 100%,grid, 30% 69%);
+  padding: $defult 0;
+  grid-column-gap: 1%;
+
+  .tdsActivity,
+  .tdsDetails {
+    @include fixed_area(50rem, 100%);
+    background: var(--gray-dark);
+  }
+}
+
+.tdsActivity {
+  text-align: center;
+  position: relative;
+
+  h1 {
+    margin: $defultPM;
+    border: 1px solid var(--green);
+
+    span:first-child {
+      color: var(--info);
+    }
+
+    span:last-child {
+      color: var(--red);
+    }
+  }
+
+  .ulHed,
+  .ullst {
+    @include fixed_area(auto,100%,grid,35% 65%);
+    list-style: none;
+    align-items: center;
+    padding-top: $midPM;
+    padding-bottom: $defultPM;
+    color: var(--dark-blue);
+
+    li {
+      padding: $defultPM 0;
+      border-bottom: $border;
+    }
+  }
+
+  .ullst {
+    padding-top: 0;
+  }
+
+  .scroller {
+    @include fixed_area(55%,100%);
+    @include scroll;
+    overflow: auto;
+  }
+}
+
+.tdsDetails {
+  padding: $defultPM;
+
+  .detaContain {
+    @include fixed_area(86%,100%);
+    @include scroll;
+    overflow: auto;
+  }
+
+  .con_details {
+    @include fixed_area(auto,100%);
+    position: relative;
+    border-bottom: 1px solid var(--teal);
+    padding: $midPM $defultPM;
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    h2 {
+      font-size: $midFont;
+      display: inline-block;
+      border-bottom: 0;
+      color: var(--info);
+
+      span {
+        color: var(--primary);
+        text-decoration: underline;
+      }
+    }
+
+    h3 {
+      color: var(--dark-blue);
+      font-size: $smFont;
+      padding-left: $midPM;
+    }
+
+    p {
+      text-indent: $midPM;
+      color: var(--dark-blue);
+      margin: $midPM;
+    }
+
+    ul {
+      display: inline-block;
+      list-style: none;
+      margin-bottom: $midPM;
+      position: absolute;
+      right: $midPM;
+      bottom: $defultPM;
+
+      li {
+        display: inline-block;
+        margin-right: $defultPM;
+
+        a {
+          padding: $defultPM;
+        }
+      }
+    }
+  }
+}
+
+.pendSucHis {
+  @include fixed_area(auto,100%,grid, 49.5% 49.5%);
+  align-items: center;
+  grid-column-gap: 1%;
+  justify-content: space-between;
+
+  .pendHis,
+  .sucHis {
+    @include fixed_area(45rem, 100%);
+    padding: $midPM;
+    background: var(--gray-dark);
+  }
+
+  .detaContain {
+    @include fixed_area(84%,100%);
+    @include scroll;
+    overflow: auto;
+  }
+
+  .detaHed,
+  .detaLst {
+    @include fixed_area(auto,100%,grid, 10% 30% 13% 32% 15%);
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    padding-bottom: $defultPM;
+    color: var(--dark-blue);
+
+    li {
+      padding: $defultPM 0;
+      border-bottom: $border;
+    }
+  }
+
+  .detaHed {
+    padding-bottom: 0;
+  }
+}

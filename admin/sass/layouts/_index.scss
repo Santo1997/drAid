@@ -1,0 +1,253 @@
+.intro_contain {
+  @include fixed_area(50%,45%,block);
+  background: var(--gray-dark);
+  padding: 8rem 10rem;
+  position: fixed;
+  z-index: 100;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  h2 {
+    color: var(--white);
+    font-size: 4rem;
+  }
+
+  h1 {
+    color: var(--primary);
+    margin: $midPM auto;
+    font-size: 6rem;
+    text-align: center;
+  }
+
+  .center {
+    display: block;
+    text-align: center;
+
+    a {
+      @include linktype(var(--primary),rgba(#0090e7, 0.3));
+      padding: $defult $midPM;
+      font-size: $midFont;
+      align-items: center;
+      justify-content: space-between;
+
+      &:hover {
+        @include linktype(var(--white),var(--primary));
+      }
+    }
+  }
+}
+
+.entry {
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  position: fixed;
+  background: rgba(#0d0d0d, 0.9);
+
+  &:target {
+    display: block;
+  }
+
+  .close {
+    padding: $defultPM;
+    display: inline-block;
+    position: absolute;
+    top: 3%;
+    right: 28%;
+
+    i {
+      color: var(--primary);
+      font-size: $lgFont;
+    }
+
+    &:hover i {
+      color: var(--red);
+    }
+  }
+}
+
+.login,
+.signup {
+  @include fixed_area(auto,35%);
+  padding-bottom: $midPM;
+  margin: 6% auto;
+  color: var(--dark-blue);
+  background: var(--gray-dark);
+  border: 2px solid var(--primary);
+  overflow: hidden;
+
+  .label {
+    @include fixed_area(auto,100%);
+    text-align: center;
+    line-height: 2;
+    color: var(--primary);
+    font-size: $lgFont;
+    cursor: pointer;
+    border-bottom: 2px solid var(--primary);
+  }
+}
+
+.signin {
+  @include fixed_area(auto, 100%);
+  padding: $lgPM;
+  position: relative;
+
+  p {
+    display: block;
+    font-size: $defult;
+    margin-bottom: $midPM;
+  }
+
+  .field {
+    @include fixed_area(6.5rem, 100%);
+    position: relative;
+    margin: $defultPM auto;
+
+    .lab {
+      opacity: 0.7;
+      color: var(--dark-blue);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    input {
+      @include fixed_area(3.8rem, 100%);
+      padding: $defultPM;
+      font-size: $defult;
+      outline: none;
+      border: 0;
+      background: var(--dark);
+
+      &:focus,
+      &:not(:focus):valid {
+        outline: none;
+        color: var(--white);
+        border: 0.5px solid var(--primary);
+      }
+    }
+
+    input:focus + .lab,
+    input:not(:focus):valid + .lab {
+      top: -22px;
+      left: 5px;
+      font-weight: bold;
+      font-size: $defult;
+    }
+  }
+
+  input[type=reset],
+  input[type=submit] {
+    display: block;
+    margin: 0 auto;
+    font-size: $midFont;
+    padding: $defultPM $midPM;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .extraInfo {
+    @include fixed_area(auto,100%,grid,auto auto);
+    justify-content: space-between;
+    margin-bottom: $midPM;
+
+    div {
+      label {
+        cursor: pointer;
+      }
+
+      input[type=checkbox]:checked {
+        outline: 2px solid green;
+      }
+    }
+
+    .fgt {
+      display: block;
+      font-size: $defult;
+      color: var(--primary);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .log_info {
+    @include fixed_area(auto,100%);
+    text-align: center;
+    position: relative;
+    margin-top: $defultPM;
+
+    p {
+      display: inline-block;
+    }
+
+    h3 {
+      display: inline-block;
+      cursor: pointer;
+      color: var(--primary);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .acc_details {
+      display: none;
+      position: absolute;
+      top: 3rem;
+      right: $midPM;
+      z-index: 4;
+
+      ul {
+        @include fixed_area(100%,100%, grid);
+        grid-template-rows: auto auto auto;
+        padding: $defultPM;
+        list-style: none;
+        background: var(--dark);
+        text-align: left;
+
+        li {
+          display: block;
+          position: relative;
+
+          &:first-child::after {
+            content: '';
+            @include fixed_area(2rem,2rem);
+            background: var(--dark);
+            transform: rotate(45deg);
+            position: absolute;
+            top: -1.3rem;
+            left: 0.6rem;
+            z-index: -2;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: $defultPM;
+          }
+
+          a {
+            color: var(--white);
+
+            &:hover {
+              color: var(--primary);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fgtDecline {
+    @include fixed_area(auto,70%,grid, auto auto);
+    margin: $defultPM auto;
+    grid-column-gap: 1%;
+  }
+}

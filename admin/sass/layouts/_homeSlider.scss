@@ -1,0 +1,100 @@
+.secHead {
+  @include fixed_area(100%,24rem);
+  background: var(--gray-dark);
+  padding: $defultPM;
+  position: fixed;
+  left: 0;
+}
+
+.hedlogo {
+  @include fixed_area(6rem,100%);
+  padding: $defult 0;
+
+  h1 {
+    letter-spacing: 0.5rem;
+
+    a {
+      color: var(--white);
+    }
+  }
+}
+
+.hedUser {
+  @include fixed_area(auto,100%,grid,auto auto auto);
+  align-items: center;
+  color: var(--white);
+  margin-top: $defult;
+
+  #userInfo {
+    p {
+      color: var(--dark-blue);
+      padding-left: $defult;
+    }
+  }
+
+  .access {
+    text-align: center;
+    padding: $defultPM 0;
+    cursor: pointer;
+    position: relative;
+
+    label i {
+      cursor: pointer;
+    }
+
+    .headOut {
+      top: 100%;
+      right: - $defultPM;
+      z-index: 50;
+    }
+  }
+
+  #tog {
+    display: none;
+
+    &:checked ~ #navBar2 {
+      display: block;
+    }
+  }
+}
+
+.nav {
+  margin-top: $midPM;
+
+  label {
+    color: var(--dark-blue);
+  }
+
+  ul {
+    list-style: none;
+    margin-top: $midPM;
+
+    li {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: $defultPM;
+      }
+
+      a {
+        display: grid;
+        color: var(--dark-blue);
+        grid-template-columns: auto auto;
+        grid-column-gap: $defultPM;
+        justify-content: flex-start;
+        align-items: center;
+
+        span:first-child {
+          padding: 0.8rem;
+          align-items: center;
+          border-radius: 100%;
+          background: var(--black);
+        }
+
+        &:hover {
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
